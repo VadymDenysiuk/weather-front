@@ -36,6 +36,14 @@
   }
 
   .weather {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.5s ease-in-out;
+
+    &.animate {
+      opacity: 0.5;
+      transform: translateY(-20px);
+    }
     &__icon {
       width: 160px;
       margin-bottom: 48px;

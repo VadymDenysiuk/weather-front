@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { IWeather } from "../../types";
 
 const Weather: React.FC<{
   weather: IWeather;
   isActiveForm: boolean;
 }> = ({ weather, isActiveForm }) => {
+  const [animationClass, setAnimationClass] = useState("");
+
+  useEffect(() => {
+    if (weather) {
+      setAnimationClass("animate");
+
+      const timeout = setTimeout(() => setAnimationClass(""), 1000);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [weather]);
+
   return (
-    <div className="weather">
+    <div className={`weather ${animationClass}`}>
       <div className={`weather__icon ${isActiveForm ? "hide" : ""}`}>
         <img
           src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@4x.png`}
