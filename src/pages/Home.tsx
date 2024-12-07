@@ -18,7 +18,7 @@ const Home: React.FC = () => {
           </h1>
         )}
         <Form setWeather={setWeather} setCity={setCity} />
-        <a href="/catalog" className="home__history-button">
+        <a href="/list" className="home__history-button">
           Show history
         </a>
       </div>

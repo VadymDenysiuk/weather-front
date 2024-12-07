@@ -46,3 +46,10 @@ export interface ILocalStorageRequests {
   timestamp: number;
   data: IWeather[];
 }
+
+export interface IHistoryItem {
+  created_at: string;
+  user_id: string;
+  weather: IWeather;
+  _id: string;
+}
