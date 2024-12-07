@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import Weather from "../components/Homepage/Weather";
 import Form from "../components/Homepage/Form";
 import { IWeather } from "../types";
+import Spinner from "../components/shared/Spinner/Spinner";
 
 const Home: React.FC = () => {
   const [weather, setWeather] = useState<IWeather | null>(null);
   const [isActiveForm, setIsActiveForm] = useState<boolean>(false);
   const [isNonValidResult, setIsNonValidResult] = useState<boolean>(false);
-  const [city, setCity] = useState<string>("");
 
   return (
     <div className={`home ${isActiveForm && weather ? "active" : ""}`}>
@@ -18,11 +18,7 @@ const Home: React.FC = () => {
               The city you entered does not exist. Please try again.
             </p>
           ) : weather ? (
-            <Weather
-              weather={weather}
-              city={city}
-              isActiveForm={isActiveForm}
-            />
+            <Weather weather={weather} isActiveForm={isActiveForm} />
           ) : (
             <h1 className="home__title">
               Hello, enter the city you are interested in.
@@ -31,7 +27,6 @@ const Home: React.FC = () => {
         </div>
         <Form
           setWeather={setWeather}
-          setCity={setCity}
           setIsNonValidResult={setIsNonValidResult}
           setIsActiveForm={setIsActiveForm}
         />

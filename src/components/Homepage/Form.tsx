@@ -1,7 +1,8 @@
 import { Field, Form, Formik, FormikHelpers } from "formik";
-import React from "react";
+import React, { useState } from "react";
 import getWeather from "../../service/get-weather";
 import { IWeather } from "../../types";
+import Spinner from "../shared/Spinner/Spinner";
 
 interface IFormValues {
   city: string;
@@ -9,18 +10,19 @@ interface IFormValues {
 
 const HomeForm: React.FC<{
   setWeather: React.Dispatch<React.SetStateAction<IWeather | null>>;
-  setCity: React.Dispatch<React.SetStateAction<string>>;
   setIsActiveForm: React.Dispatch<React.SetStateAction<boolean>>;
   setIsNonValidResult: React.Dispatch<React.SetStateAction<boolean>>;
-}> = ({ setWeather, setCity, setIsActiveForm, setIsNonValidResult }) => {
+}> = ({ setWeather, setIsActiveForm, setIsNonValidResult }) => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
   const handleSubmit = async (
     values: IFormValues,
     { resetForm }: FormikHelpers<IFormValues>
   ) => {
+    setIsLoading(true);
     const { city } = values;
     setIsActiveForm(false);
     const weather = await getWeather(city.toLowerCase());
-    setCity(city);
 
     if (weather.length > 0) {
       setWeather(weather[0]);
@@ -29,10 +31,13 @@ const HomeForm: React.FC<{
     } else {
       setIsNonValidResult(true);
     }
+    setIsLoading(false);
   };
 
   return (
     <div className="homeform">
+      {" "}
+      {isLoading ? <Spinner /> : null}
       <Formik
         initialValues={{
           city: "",
@@ -53,10 +58,11 @@ const HomeForm: React.FC<{
               onBlur={() => setIsActiveForm(false)}
             />
           </label>{" "}
-          <button className="homeform__button">Submit</button>
+          <button disabled={isLoading} className="homeform__button">
+            Submit
+          </button>
         </Form>
       </Formik>
-
       <a
         href="/list"
         className="home__history-button home__history-button--desk"
