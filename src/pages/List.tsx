@@ -20,7 +20,7 @@ const List: React.FC = () => {
     <div className="history">
       <div className="history__container container">
         <Header />
-        {list && list.length < 3 ? (
+        {list ? (
           <div className="history__list">
             {list?.map((item) => (
               <ListItem key={item._id} data={item.weather} />
