@@ -18,13 +18,30 @@
     text-align: center;
     color: #1c242b;
   }
+
+  &.active {
+    .home__top-wrapper {
+      top: -227px;
+    }
+
+    .homeform {
+      top: -227px;
+    }
+  }
+
+  &__top-wrapper {
+    position: relative;
+    top: 0;
+    transition: $main-transition;
+  }
+
   .weather {
     &__icon {
       width: 160px;
       margin-bottom: 48px;
       transition: $main-transition;
       opacity: 1;
-
+      height: auto;
       &.hide {
         opacity: 0;
       }
@@ -61,6 +78,9 @@
   }
 
   .homeform {
+    position: relative;
+    top: 0;
+    transition: $main-transition;
     width: 100%;
     &__form {
       width: 100%;
@@ -132,6 +152,23 @@
 
 @media screen and (min-width: $size-tablet) {
   .home {
+    &.active {
+      .home__top-wrapper {
+        top: 0;
+      }
+
+      .homeform {
+        top: 0;
+      }
+    }
+
+    .weather {
+      &__icon {
+        &.hide {
+          opacity: 1;
+        }
+      }
+    }
   }
 }
 
@@ -157,10 +194,6 @@
       &__icon {
         width: 278px;
         margin-bottom: 80px;
-
-        &.hide {
-          opacity: 1;
-        }
       }
 
       &__city {

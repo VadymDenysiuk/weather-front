@@ -10,7 +10,7 @@ const Home: React.FC = () => {
   const [city, setCity] = useState<string>("");
 
   return (
-    <div className="home">
+    <div className={`home ${isActiveForm && weather ? "active" : ""}`}>
       <div className="home__container container">
         <div className="home__top-wrapper">
           {isNonValidResult ? (
