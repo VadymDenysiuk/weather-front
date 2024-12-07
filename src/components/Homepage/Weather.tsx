@@ -1,13 +1,14 @@
 import React from "react";
 import { IWeather } from "../../types";
 
-const Weather: React.FC<{ weather: IWeather; city: string }> = ({
-  weather,
-  city,
-}) => {
+const Weather: React.FC<{
+  weather: IWeather;
+  city: string;
+  isActiveForm: boolean;
+}> = ({ weather, city, isActiveForm }) => {
   return (
     <div className="weather">
-      <div className="weather__icon">
+      <div className={`weather__icon ${isActiveForm ? "hide" : ""}`}>
         <img
           src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@4x.png`}
           alt={weather.weather[0]?.main}

@@ -10,7 +10,8 @@ interface IFormValues {
 const HomeForm: React.FC<{
   setWeather: React.Dispatch<React.SetStateAction<IWeather | null>>;
   setCity: React.Dispatch<React.SetStateAction<string>>;
-}> = ({ setWeather, setCity }) => {
+  setIsActiveForm: React.Dispatch<React.SetStateAction<boolean>>;
+}> = ({ setWeather, setCity, setIsActiveForm }) => {
   const handleSubmit = async (
     values: IFormValues,
     { resetForm }: FormikHelpers<IFormValues>
@@ -41,6 +42,8 @@ const HomeForm: React.FC<{
               maxLength={60}
               placeholder={"Start entering the name of the city"}
               required
+              onFocus={() => setIsActiveForm(true)}
+              onBlur={() => setIsActiveForm(false)}
             />
           </label>{" "}
           <button className="homeform__button">Submit</button>

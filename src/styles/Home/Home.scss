@@ -22,6 +22,12 @@
     &__icon {
       width: 160px;
       margin-bottom: 48px;
+      transition: $main-transition;
+      opacity: 1;
+
+      &.hide {
+        opacity: 0;
+      }
     }
 
     &__city {
