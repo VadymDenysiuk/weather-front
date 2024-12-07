@@ -56,6 +56,13 @@ const HomeForm: React.FC<{
           <button className="homeform__button">Submit</button>
         </Form>
       </Formik>
+
+      <a
+        href="/list"
+        className="home__history-button home__history-button--desk"
+      >
+        Show history
+      </a>
     </div>
   );
 };

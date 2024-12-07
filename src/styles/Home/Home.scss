@@ -123,6 +123,10 @@
     text-decoration-line: underline;
     text-decoration-style: solid;
     color: #8e9aa7;
+
+    &--desk {
+      display: none;
+    }
   }
 }
 
@@ -133,5 +137,60 @@
 
 @media screen and (min-width: $size-desktop) {
   .home {
+    padding-top: 104px;
+
+    &__container {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &__top-wrapper {
+      width: 572px;
+      min-width: 572px;
+    }
+
+    .weather {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      &__icon {
+        width: 278px;
+        margin-bottom: 80px;
+
+        &.hide {
+          opacity: 1;
+        }
+      }
+
+      &__city {
+        font-size: 20px;
+        line-height: 28px;
+      }
+
+      &__temp {
+        margin-bottom: 4px;
+      }
+    }
+
+    .homeform {
+      width: 572px;
+      min-width: 572px;
+      padding: 40px;
+
+      &__button {
+        margin-bottom: 52px;
+      }
+    }
+
+    &__history-button {
+      &--mob {
+        display: none;
+      }
+
+      &--desk {
+        display: block;
+      }
+    }
   }
 }

@@ -14,7 +14,7 @@ const Weather: React.FC<{
           alt={weather.weather[0]?.main}
         />
       </div>
-      <h3 className="weather__city">{city}</h3>
+      <h3 className="weather__city">{`${city}, ${weather.sys.country}`}</h3>
       <h1 className="weather__temp">{weather.main.temp.toFixed()}°</h1>
       <p className="weather__condition">{weather.weather[0]?.main}</p>
     </div>

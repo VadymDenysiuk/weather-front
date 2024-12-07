@@ -12,17 +12,23 @@ const Home: React.FC = () => {
   return (
     <div className="home">
       <div className="home__container container">
-        {isNonValidResult ? (
-          <p className="home__title">
-            The city you entered does not exist. Please try again.
-          </p>
-        ) : weather ? (
-          <Weather weather={weather} city={city} isActiveForm={isActiveForm} />
-        ) : (
-          <h1 className="home__title">
-            Hello, enter the city you are interested in.
-          </h1>
-        )}
+        <div className="home__top-wrapper">
+          {isNonValidResult ? (
+            <p className="home__title">
+              The city you entered does not exist. Please try again.
+            </p>
+          ) : weather ? (
+            <Weather
+              weather={weather}
+              city={city}
+              isActiveForm={isActiveForm}
+            />
+          ) : (
+            <h1 className="home__title">
+              Hello, enter the city you are interested in.
+            </h1>
+          )}
+        </div>
         <Form
           setWeather={setWeather}
           setCity={setCity}
@@ -30,7 +36,10 @@ const Home: React.FC = () => {
           setIsActiveForm={setIsActiveForm}
         />
 
-        <a href="/list" className="home__history-button">
+        <a
+          href="/list"
+          className="home__history-button home__history-button--mob"
+        >
           Show history
         </a>
       </div>
