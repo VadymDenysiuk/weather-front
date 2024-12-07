@@ -11,17 +11,24 @@ const HomeForm: React.FC<{
   setWeather: React.Dispatch<React.SetStateAction<IWeather | null>>;
   setCity: React.Dispatch<React.SetStateAction<string>>;
   setIsActiveForm: React.Dispatch<React.SetStateAction<boolean>>;
-}> = ({ setWeather, setCity, setIsActiveForm }) => {
+  setIsNonValidResult: React.Dispatch<React.SetStateAction<boolean>>;
+}> = ({ setWeather, setCity, setIsActiveForm, setIsNonValidResult }) => {
   const handleSubmit = async (
     values: IFormValues,
     { resetForm }: FormikHelpers<IFormValues>
   ) => {
     const { city } = values;
+    setIsActiveForm(false);
     const weather = await getWeather(city.toLowerCase());
     setCity(city);
 
-    if (weather.length > 0) setWeather(weather[0]);
-    resetForm();
+    if (weather.length > 0) {
+      setWeather(weather[0]);
+      resetForm();
+      setIsNonValidResult(false);
+    } else {
+      setIsNonValidResult(true);
+    }
   };
 
   return (
