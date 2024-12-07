@@ -16,9 +16,8 @@ const HomeForm: React.FC<{
     { resetForm }: FormikHelpers<IFormValues>
   ) => {
     const { city } = values;
-    const weather = await getWeather(values.city);
+    const weather = await getWeather(city.toLowerCase());
     setCity(city);
-    console.log(weather, "weather");
 
     if (weather.length > 0) setWeather(weather[0]);
     resetForm();

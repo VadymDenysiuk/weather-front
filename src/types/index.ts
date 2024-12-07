@@ -40,3 +40,9 @@ export interface IWeather {
   name: string;
   cod: number;
 }
+
+export interface ILocalStorageRequests {
+  city: string;
+  timestamp: number;
+  data: IWeather[];
+}
