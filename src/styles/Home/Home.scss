@@ -1,0 +1,131 @@
+.home {
+  background: linear-gradient(180deg, #bce8ff 0%, #ffffff 41.26%);
+  padding-top: 119px;
+  height: 100dvh;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__title {
+    font-family: Inter;
+    font-size: 54px;
+    font-weight: 700;
+    line-height: 64.8px;
+    text-align: center;
+    color: #1c242b;
+  }
+  .weather {
+    &__icon {
+      width: 160px;
+      margin-bottom: 48px;
+    }
+
+    &__city {
+      font-family: Inter;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 25.2px;
+      text-align: center;
+      color: #1c242b;
+      margin-bottom: 16px;
+    }
+
+    &__temp {
+      font-family: Inter;
+      font-size: 54px;
+      font-weight: 700;
+      line-height: 64.8px;
+      text-align: center;
+      color: #1c242b;
+      margin-bottom: 25px;
+    }
+
+    &__condition {
+      font-family: Inter;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21px;
+      text-align: center;
+      color: #35424f;
+    }
+  }
+
+  .homeform {
+    width: 100%;
+    &__form {
+      width: 100%;
+    }
+
+    &__label {
+      display: block;
+      font-family: Inter;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 14px;
+      text-align: left;
+      color: #56626f;
+      margin-bottom: 12px;
+    }
+
+    &__input {
+      border: 1px solid #ced6dd;
+      border-radius: 8px;
+      padding: 15px 12px;
+      font-family: Inter;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 14px;
+      text-align: left;
+      color: #1c242b;
+      width: 100%;
+      margin-bottom: 20px;
+
+      &::placeholder {
+        font-family: Inter;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 14px;
+        text-align: left;
+        color: #8e9aa7;
+      }
+    }
+
+    &__button {
+      background: linear-gradient(180deg, #2f5af4 0%, #0fa2ab 100%);
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 16px;
+      text-align: center;
+      padding: 16px 32px;
+      border-radius: 8px;
+      width: 100%;
+      color: #ffffff;
+    }
+  }
+
+  &__history-button {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: center;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    color: #8e9aa7;
+  }
+}
+
+@media screen and (min-width: $size-tablet) {
+  .home {
+  }
+}
+
+@media screen and (min-width: $size-desktop) {
+  .home {
+  }
+}

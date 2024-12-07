@@ -1,0 +1,93 @@
+@import "./variables/variables";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Geologica";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+html,
+body {
+  scroll-behavior: smooth !important;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+input {
+  outline: none;
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  background: #ffffff;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
+main {
+  position: relative;
+  overflow: hidden;
+  font-family: "Gilroy";
+}
+
+.container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  width: 100%;
+  padding: 0 20px;
+
+  @media screen and (min-width: $size-tablet) {
+    max-width: $size-tablet;
+    padding: 0 60px;
+  }
+
+  @media screen and (min-width: $size-desktop) {
+    max-width: $size-desktop;
+    padding: 0 80px;
+  }
+}
+
+// Components
+@import "./Home/Home.scss";
