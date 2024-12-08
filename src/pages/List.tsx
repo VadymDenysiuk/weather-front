@@ -22,7 +22,7 @@ const List: React.FC = () => {
 
   useEffect(() => {
     getList();
-  }, []);
+  }, [getList]);
 
   return (
     <div className="history">

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Weather from "../components/Homepage/Weather";
 import Form from "../components/Homepage/Form";
 import { IWeather } from "../types";
-import Spinner from "../components/shared/Spinner/Spinner";
 
 const Home: React.FC = () => {
   const [weather, setWeather] = useState<IWeather | null>(null);
