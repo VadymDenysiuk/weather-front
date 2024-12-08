@@ -2,7 +2,6 @@ import axios from "axios";
 import { ILocalStorageRequests, IWeather } from "../types";
 import saveToLocalStorage from "../utils/saveToLocalStorage";
 
-
 const getWeather = async (city: string): Promise<IWeather[]> => {
   const storedRequests: ILocalStorageRequests[] = JSON.parse(
     localStorage.getItem("weatherRequests") || "[]"
@@ -29,6 +28,7 @@ const getWeather = async (city: string): Promise<IWeather[]> => {
       city,
       userId,
     });
+
     saveToLocalStorage(city, response.data);
 
     return response.data;

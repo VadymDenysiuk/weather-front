@@ -39,6 +39,7 @@ export interface IWeather {
   id: number;
   name: string;
   cod: number;
+  city: string;
 }
 
 export interface ILocalStorageRequests {
