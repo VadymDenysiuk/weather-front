@@ -80,15 +80,19 @@ main {
   margin-right: auto;
   max-width: 100%;
   width: 100%;
-  padding: 0 16px;
+  padding-left: 16px;
+  padding-right: 16px;
 
   @media screen and (min-width: vars.$size-tablet) {
     max-width: vars.$size-tablet;
-    padding: 0 60px;
+
+    padding-left: 60px;
+    padding-right: 60px;
   }
 
   @media screen and (min-width: vars.$size-desktop) {
     max-width: vars.$size-desktop;
-    padding: 0 140px;
+    padding-left: 140px;
+    padding-right: 140px;
   }
 }
