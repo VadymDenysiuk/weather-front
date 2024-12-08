@@ -2,6 +2,13 @@
   background: linear-gradient(180deg, #bce8ff 0%, #ffffff 41.26%);
   min-height: 100dvh;
   padding-top: 20px;
+  padding-bottom: 20px;
+
+  .oval-loading {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
   &__container {
     position: initial;
@@ -111,6 +118,7 @@
 @media screen and (min-width: $size-desktop) {
   .history {
     padding-top: 40px;
+    padding-bottom: 40px;
 
     .header {
       position: relative;

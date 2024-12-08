@@ -53,3 +53,9 @@ export interface IHistoryItem {
   weather: IWeather;
   _id: string;
 }
+
+export enum LoadStatus {
+  Loading = "LOADING",
+  Success = "SUCCESS",
+  Failed = "FAILED",
+}
