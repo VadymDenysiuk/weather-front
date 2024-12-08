@@ -1,10 +1,11 @@
 @import "./variables/variables";
+@import "../fonts/inter/stylesheet.css";
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Geologica";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -67,7 +68,7 @@ html {
 main {
   position: relative;
   overflow: hidden;
-  font-family: "Gilroy";
+  font-family: "Inter";
 }
 
 .container {
