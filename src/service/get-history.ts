@@ -1,27 +1,27 @@
-import axios from "axios";
-import { IHistoryItem } from "../types";
+import axios from 'axios';
+import { IHistoryItem } from '../types';
 
 const getHistory = async (): Promise<IHistoryItem[]> => {
-  let userId = localStorage.getItem("userId");
-  if (!userId) {
-    userId = `user-${Math.floor(Math.random() * 10000000000)}`;
-    localStorage.setItem("userId", userId);
-  }
+    let userId = localStorage.getItem('userId');
+    if (!userId) {
+        userId = `user-${Math.floor(Math.random() * 10000000000)}`;
+        localStorage.setItem('userId', userId);
+    }
 
-  const apiUrl = process.env.REACT_APP_API_URL ?? "";
+    const apiUrl = process.env.REACT_APP_API_URL ?? '';
 
-  try {
-    const response = await axios.post(`${apiUrl}history`, {
-      userId,
-      limit: 100,
-    });
+    try {
+        const response = await axios.post(`${apiUrl}history`, {
+            userId,
+            limit: 100,
+        });
 
-    return response.data;
-  } catch (error) {
-    console.log(error, "err");
-  }
+        return response.data;
+    } catch (error) {
+        console.log(error, 'err');
+    }
 
-  return [];
+    return [];
 };
 
 export default getHistory;
