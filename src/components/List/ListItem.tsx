@@ -5,7 +5,7 @@ const ListItem: React.FC<{ data: IWeather }> = ({ data }) => {
   return (
     <div className="list-item">
       <div className="list-item__left">
-        <p className="list-item__city">{`${data.name} ${data.sys?.country}`}</p>
+        <p className="list-item__city">{`${data.city} ${data.sys?.country}`}</p>
         <p className="list-item__condition">{data.weather[0]?.main}</p>
       </div>
       <div className="list-item__right">
