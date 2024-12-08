@@ -1,3 +1,5 @@
+@use "../variables/variables" as vars;
+
 .home {
   background: linear-gradient(180deg, #bce8ff 0%, #ffffff 41.26%);
 
@@ -34,7 +36,7 @@
   &__top-wrapper {
     position: relative;
     top: 0;
-    transition: $main-transition;
+    transition: vars.$main-transition;
   }
 
   .weather {
@@ -52,7 +54,7 @@
     &__icon {
       width: 160px;
       margin-bottom: 48px;
-      transition: $main-transition;
+      transition: vars.$main-transition;
       opacity: 1;
       height: auto;
       &.hide {
@@ -93,7 +95,7 @@
   .homeform {
     position: relative;
     top: 0;
-    transition: $main-transition;
+    transition: vars.$main-transition;
     width: 100%;
 
     .oval-loading {
@@ -170,7 +172,7 @@
   }
 }
 
-@media screen and (min-width: $size-tablet) {
+@media screen and (min-width: vars.$size-tablet) {
   .home {
     &.active {
       .home__top-wrapper {
@@ -192,7 +194,7 @@
   }
 }
 
-@media screen and (min-width: $size-desktop) {
+@media screen and (min-width: vars.$size-desktop) {
   .home {
     &__container {
       display: flex;

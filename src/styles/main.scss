@@ -1,4 +1,7 @@
-@import "./variables/variables";
+@use "./variables/variables" as vars;
+@use "./Home/Home.scss" as home;
+@use "./List/List.scss" as list;
+
 @import "../fonts/inter/stylesheet.css";
 
 * {
@@ -14,7 +17,7 @@
 
 html,
 body {
-  scroll-behavior: smooth !important;
+  scroll-behavior: smooth;
 }
 
 ul,
@@ -79,17 +82,13 @@ main {
   width: 100%;
   padding: 0 16px;
 
-  @media screen and (min-width: $size-tablet) {
-    max-width: $size-tablet;
+  @media screen and (min-width: vars.$size-tablet) {
+    max-width: vars.$size-tablet;
     padding: 0 60px;
   }
 
-  @media screen and (min-width: $size-desktop) {
-    max-width: $size-desktop;
+  @media screen and (min-width: vars.$size-desktop) {
+    max-width: vars.$size-desktop;
     padding: 0 140px;
   }
 }
-
-// Components
-@import "./Home/Home.scss";
-@import "./List/List.scss";
