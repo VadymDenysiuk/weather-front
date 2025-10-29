@@ -40,7 +40,7 @@ const List: React.FC = () => {
 
                 {status === LoadStatus.Failed ? (
                     <div className="history__empty">
-                        <p className="history__empty-text">You have no query history yet.</p>
+                        <p className="history__empty-text">You have no query history yet</p>
                     </div>
                 ) : null}
             </div>
