@@ -22,9 +22,10 @@ const getWeather = async (city: string): Promise<IWeather[]> => {
     }
 
     const apiUrl = 'http://34.207.205.146:8080/';
+    const API = '/api';
 
     try {
-        const response = await axios.post(`${apiUrl}weather`, {
+        const response = await axios.post(`${API}/weather`, {
             city,
             userId,
         });

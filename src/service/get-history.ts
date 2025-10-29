@@ -8,10 +8,10 @@ const getHistory = async (): Promise<IHistoryItem[]> => {
         localStorage.setItem('userId', userId);
     }
 
-    const apiUrl = 'http://34.207.205.146:8080/';
+    const API = '/api';
 
     try {
-        const response = await axios.post(`${apiUrl}history`, {
+        const response = await axios.post(`${API}/history`, {
             userId,
             limit: 100,
         });
