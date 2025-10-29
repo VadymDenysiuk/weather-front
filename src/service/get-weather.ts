@@ -21,10 +21,10 @@ const getWeather = async (city: string): Promise<IWeather[]> => {
         localStorage.setItem('userId', userId);
     }
 
-    const apiUrl = process.env.REACT_APP_API_URL ?? '';
+    // const apiUrl = process.env.REACT_APP_API_URL ?? '';
 
     try {
-        const response = await axios.post(`${apiUrl}weather`, {
+        const response = await axios.post(`/weather`, {
             city,
             userId,
         });
