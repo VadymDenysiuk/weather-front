@@ -16,7 +16,7 @@ jobs:
       - uses: docker/build-push-action@v6
         with:
           push: true
-          tags: vadymdenysiuk/crypto-REPO:latest   # <- web у фронті, api у беці
+          tags: vadymdenysiuk/crypto-web:latest   # <- web у фронті, api у беці
 
   deploy:
     needs: build_and_push
